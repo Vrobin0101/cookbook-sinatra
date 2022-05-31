@@ -1,0 +1,19 @@
+<ul>
+  <% @cookbook.all.each do |recipe| %>
+    <li>
+      <%= recipe.name %> <%= "✔" if recipe.marked? %>
+      <ul>
+        <li>
+          <%= recipe.description %>
+        </li>
+        <li>
+          <%= recipe.prep_time %> minutes
+        </li>
+        <li>
+          <%= recipe.rating %>/5 stars
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+<a href="/new">Create a new recipe</a>
